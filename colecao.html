@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Coleção · Museu Nacional do Azulejo</title>
+<meta name="description" content="A coleção do Museu Nacional do Azulejo, do século XV aos nossos dias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="icon" href="assets/logo-mnaz.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="assets/main.js" defer></script>
+<script src="assets/movimento.js" defer></script>
+<script src="assets/fotos.js" defer></script>
+<script src="assets/pecas.js" defer></script>
+<script src="assets/extra.js" defer></script>
+</head>
+<body>
+<a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+<div class="estado" role="region" aria-label="Estado do museu">
+  <div class="wrap">
+    <p><span class="estado__ponto" aria-hidden="true"></span><strong>O museu está encerrado para obras de requalificação.</strong> Enquanto isso, visite o <a href="agenda.html#open-azulejo">Open Azulejo no Palácio da Calheta</a>.</p>
+    <p class="estado__links"><a href="museu.html#apoiar">Apoiar</a><a href="visitar.html#loja">Loja</a><a href="museu.html#investigacao">Investigação</a><a href="museu.html#imprensa">Imprensa</a><span>PT · <a href="#" lang="en">EN</a></span></p>
+  </div>
+</div>
+<header class="cabecalho">
+  <div class="wrap">
+    <a class="marca" href="index.html" aria-label="Museu Nacional do Azulejo, página inicial">
+      <img class="marca__selo" src="assets/logo-mnaz.svg" alt="" width="56" height="56">
+      <span class="marca__nome">Museu Nacional<br>do Azulejo</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="nav" id="menu" aria-label="Principal">
+      <a href="visitar.html">Visita e bilhetes</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="colecao.html" aria-current="page">Coleção</a>
+      <a href="historias.html">Histórias</a>
+      <a href="azulejo-aberto.html">Azulejo Aberto</a>
+      <a href="museu.html">O museu</a>
+      <a class="btn" href="https://mmp.bymeoblueticket.pt/pt/event/16490/open-azulejo-jardim-botanico-tropical" target="_blank" rel="noopener">Bilhetes</a>
+    </nav>
+    <a class="btn" href="https://mmp.bymeoblueticket.pt/pt/event/16490/open-azulejo-jardim-botanico-tropical" target="_blank" rel="noopener">Bilhetes</a>
+  </div>
+</header>
+<main id="conteudo">
+
+<section class="titulo-pag titulo-pag--foto" data-foto="batalha-de-isso" style="background-image:url('fotos/batalha-de-isso.jpg')" data-credito="Jules Verne Times Two · CC BY-SA 4.0"><div class="capa__veu"></div>
+  <div class="wrap">
+    <div style="display:grid;gap:1.25rem">
+      <p class="etiqueta">Coleção</p>
+      <h1>Do século XV aos nossos dias</h1>
+      <p>A coleção percorre a história do azulejo em Portugal desde meados do século XV até à criação contemporânea. Inclui também cerâmica, porcelana e faiança dos séculos XVI a XXI, e uma área dedicada aos materiais e às técnicas de fabrico.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccao" id="pecas">
+  <div class="wrap" data-catalogo>
+    <div class="cabeca"><div><p class="etiqueta">Peças</p><h2>Explorar a coleção</h2><p>O museu está a fotografar todas as peças, a começar pelas que estão montadas no percurso e pelo século XVII. Cada peça terá a sua ficha, com o texto do painel.</p></div><p class="mono" data-contagem></p></div>
+    <div class="chips" style="margin-bottom:1.5rem">
+      <button class="chip" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+      <button class="chip" type="button" data-filtro="montado" aria-pressed="false">Em exposição permanente</button>
+      <button class="chip" type="button" data-filtro="xvii" aria-pressed="false">Século XVII</button>
+      <button class="chip" type="button" data-filtro="temporaria" aria-pressed="false">Exposições temporárias</button>
+    </div>
+    <div class="pecas"></div>
+  </div>
+  <dialog id="ficha" aria-labelledby="ficha-titulo"><button type="button" class="ficha__fechar" data-fechar aria-label="Fechar">Fechar</button><div class="ficha__corpo"></div></dialog>
+</section>
+
+<section class="seccao seccao--branca">
+  <div class="wrap explorador" data-explorador>
+    <div>
+      <div class="explorador__vista" role="img" aria-label="Pré-visualização do padrão escolhido"></div>
+      <p class="mono" data-legenda style="margin-top:.6rem;color:var(--tinta-2)"></p>
+    </div>
+    <div class="explorador__ctl">
+      <p class="etiqueta">Laboratório de padrões</p>
+      <h2>Um azulejo sozinho não é um padrão</h2>
+      <p style="color:var(--tinta-2)">Nos padrões do século XVII, cada azulejo tem só uma parte do desenho. Rodados e juntos em grupos de 2 × 2, 4 × 4 ou mais, formam um motivo maior que se repete pela parede como um tapete. Escolha um estilo e veja o que acontece quando junta mais azulejos.</p>
+      <div><p class="mono" style="margin-bottom:.5rem">Estilo</p>
+        <div class="chips">
+          <button class="chip" type="button" data-k="mourisco" aria-pressed="false">Hispano-mourisco</button>
+          <button class="chip" type="button" data-k="enxaquetado" aria-pressed="false">Enxaquetado</button>
+          <button class="chip" type="button" data-k="padrao" aria-pressed="true">Padrão seiscentista</button>
+          <button class="chip" type="button" data-k="barroco" aria-pressed="false">Azul e branco</button>
+          <button class="chip" type="button" data-k="pombalino" aria-pressed="false">Pombalino</button>
+          <button class="chip" type="button" data-k="industrial" aria-pressed="false">Fachada oitocentista</button>
+          <button class="chip" type="button" data-k="contemporaneo" aria-pressed="false">Contemporâneo</button>
+        </div></div>
+      <div><p class="mono" style="margin-bottom:.5rem">Azulejos</p>
+        <div class="chips">
+          <button class="chip" type="button" data-n="1" aria-pressed="false">1</button>
+          <button class="chip" type="button" data-n="2" aria-pressed="true">2 × 2</button>
+          <button class="chip" type="button" data-n="4" aria-pressed="false">4 × 4</button>
+          <button class="chip" type="button" data-n="8" aria-pressed="false">8 × 8</button>
+        </div></div>
+      <p><button class="btn btn--linha" type="button" data-nova>Gerar outro padrão</button></p>
+      <p class="nota">Padrões gerados por computador a partir das regras de cada época. Não reproduzem peças da coleção.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccao">
+  <div class="wrap">
+    <div class="cabeca"><div><p class="etiqueta">Percurso cronológico</p><h2>Sete momentos do azulejo português</h2></div></div>
+    <div class="cronologia">
+      <article class="periodo" id="mudejar"><p class="mono">séc. XV – XVI</p><div><h3>Hispano-mourisco</h3><p>Os primeiros azulejos usados em Portugal vinham de Sevilha e de Valência. Eram feitos por corda-seca, em que uma linha de gordura e manganês separa as cores no forno, ou por aresta, em que o desenho é moldado em relevo e cada cor fica num pequeno compartimento. Os motivos são geométricos e vegetais, herdados da tradição islâmica. O Palácio Nacional de Sintra guarda o maior conjunto destes revestimentos ainda no lugar.</p></div><div class="periodo__az" data-foto="hispano-mourisco" style="background-image:url('fotos/hispano-mourisco-640.jpg')" data-credito="Pedro Ribeiro Simões · CC BY 2.0"></div></article>
+      <article class="periodo" id="majolica"><p class="mono">séc. XVI</p><div><h3>Majólica</h3><p>A técnica vinda de Itália, através da Flandres e de Sevilha, permite pintar diretamente sobre o vidrado branco de estanho. O azulejo liso substitui o relevo, e o pintor ganha liberdade para fazer figuras, grotescos e cenas. Em Lisboa instalam-se oficinas com ceramistas flamengos. É desta época o retábulo de Nossa Senhora da Vida, de cerca de 1580, uma das obras centrais do museu.</p></div><div class="periodo__az" data-foto="nossa-senhora-da-vida" style="background-image:url('fotos/nossa-senhora-da-vida-640.jpg')" data-credito="Yair Haklai · CC BY-SA 4.0"></div></article>
+      <article class="periodo" id="padrao"><p class="mono">séc. XVII</p><div><h3>Padrões e enxaquetados</h3><p>As oficinas portuguesas passam a produzir em grande quantidade. Os enxaquetados, feitos com azulejos lisos de várias cores dispostos em xadrez, e depois os padrões de repetição em azul e amarelo cobrem paredes inteiras de igrejas como se fossem tapetes. Aparecem também os frontais de altar que imitam tecidos bordados e as composições de aves e ramagens, inspiradas nas sedas e porcelanas do Oriente.</p></div><div class="periodo__az" data-foto="padrao-marvila" style="background-image:url('fotos/padrao-marvila-640.jpg')" data-credito="Jules Verne Times Two · CC BY-SA 4.0"></div></article>
+      <article class="periodo" id="azul-branco"><p class="mono">c. 1690 – 1750</p><div><h3>Azul e branco</h3><p>Sob a influência da porcelana chinesa e dos azulejos holandeses, a cor reduz-se ao azul de cobalto sobre branco. É o tempo dos grandes painéis figurativos, assinados por pintores como António Pereira, Manuel dos Santos, António de Oliveira Bernardes e o seu filho Policarpo. Os historiadores chamam a esta geração o Ciclo dos Mestres. Segue-se a Grande Produção joanina, com encomendas para Portugal e para o Brasil. A Grande Vista de Lisboa, de cerca de 1700, pertence a este período.</p></div><div class="periodo__az" data-foto="licao-de-danca" style="background-image:url('fotos/licao-de-danca-640.jpg')" data-credito="Pedro Ribeiro Simões · CC BY 2.0"></div></article>
+      <article class="periodo" id="pombalino"><p class="mono">1755 – 1800</p><div><h3>Pombalino e rococó</h3><p>Depois do terramoto de 1755, a reconstrução de Lisboa pede azulejo rápido e barato. A Real Fábrica de Louça do Rato, fundada em 1767, produz padrões simples, de pequena escala, para os novos prédios da Baixa. Ao mesmo tempo, em palácios e jardins, o gosto rococó traz molduras em concha, cores suaves e cenas galantes.</p></div><div class="periodo__az" data-foto="soldado" style="background-image:url('fotos/soldado-640.jpg')" data-credito="Pedro Ribeiro Simões · CC BY 2.0"></div></article>
+      <article class="periodo" id="fachadas"><p class="mono">séc. XIX</p><div><h3>Fachadas e indústria</h3><p>O azulejo sai para a rua. Os prédios de Lisboa e do Porto cobrem-se de padrões nas fachadas, que protegem da humidade e dão cor à cidade. As fábricas, como a de Sacavém, a Viúva Lamego ou a Constância, produzem em série com estampilha, decalque e relevo. No final do século, Rafael Bordalo Pinheiro e a fábrica das Caldas da Rainha trazem o naturalismo e o humor para a cerâmica, e chega a Arte Nova.</p></div><div class="periodo__az" data-foto="bordalo-pinheiro" style="background-image:url('fotos/bordalo-pinheiro-640.jpg')" data-credito="Pedro Ribeiro Simões · CC BY 2.0"></div></article>
+      <article class="periodo" id="contemporaneo"><p class="mono">séc. XX – XXI</p><div><h3>Modernos e contemporâneos</h3><p>Artistas como Jorge Barradas, Maria Keil, Querubim Lapa, Júlio Pomar, Manuel Cargaleiro e Eduardo Nery levam o azulejo para a arte pública. As estações do Metropolitano de Lisboa, a partir de 1959, tornam-se um museu a céu aberto debaixo da terra. Hoje, ceramistas e artistas continuam a experimentar o formato, a escala e a técnica.</p></div><div class="periodo__az" data-foto="lisbonne-1937" style="background-image:url('fotos/lisbonne-1937-640.jpg')" data-credito="Pedro Ribeiro Simões · CC BY 2.0"></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="seccao seccao--azul">
+  <div class="wrap">
+    <div class="cabeca"><div><p class="etiqueta">Obras em destaque</p><h2>Duas peças para não perder</h2></div></div>
+    <div class="duas">
+      <article class="epoca" style="border:1px solid rgba(255,255,255,.25)"><div class="epoca__img" style="aspect-ratio:16/9" data-foto="nossa-senhora-da-vida" style="background-image:url('fotos/nossa-senhora-da-vida-640.jpg')" data-credito="Yair Haklai · CC BY-SA 4.0"></div><div class="epoca__txt"><p class="mono">c. 1580 · majólica</p><h3>Retábulo de Nossa Senhora da Vida</h3><p>Um altar inteiro feito de azulejo, com arquitetura pintada, colunas e figuras da Adoração dos Pastores. É uma das obras mais importantes da azulejaria renascentista portuguesa e mostra até onde chegou a técnica da majólica em Lisboa.</p></div></article>
+      <article class="epoca" style="border:1px solid rgba(255,255,255,.25)"><div class="epoca__img" style="aspect-ratio:16/9" data-foto="grande-vista" style="background-image:url('fotos/grande-vista-640.jpg')" data-credito="Bex Walton · CC BY 2.0"></div><div class="epoca__txt"><p class="mono">c. 1700 · azul e branco</p><h3>Grande Vista de Lisboa</h3><p>Perto de 23 metros de painel com a frente ribeirinha de Lisboa antes do terramoto. Veio do Palácio dos Condes de Tentúgal e é o mais extenso retrato da cidade daquele tempo.</p><p><a class="mais" href="historias.html#lisboa-antes-do-terramoto">Ler a história</a></p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="seccao seccao--branca" id="glossario">
+  <div class="wrap">
+    <div class="cabeca"><div><p class="etiqueta">Glossário</p><h2>As palavras do azulejo</h2><p>Termos que vai encontrar nas legendas do museu.</p></div></div>
+    <dl class="glossario">
+      <div><dt>Alicatado</dt><dd>Mosaico de peças de cerâmica vidrada cortadas à mão com alicate, anterior ao azulejo quadrado.</dd></div>
+      <div><dt>Aresta</dt><dd>Técnica em que o desenho é moldado em relevo, criando pequenas cavidades onde se deitam as cores.</dd></div>
+      <div><dt>Barra</dt><dd>Faixa decorativa estreita que remata um painel, em cima ou em baixo.</dd></div>
+      <div><dt>Cercadura</dt><dd>Moldura de azulejos à volta de um painel ou de um padrão.</dd></div>
+      <div><dt>Chacota</dt><dd>Barro já cozido uma vez, antes de receber o vidrado.</dd></div>
+      <div><dt>Corda-seca</dt><dd>Linha de gordura e óxido de manganês que separa as cores no forno e fica escura no fim.</dd></div>
+      <div><dt>Enxaquetado</dt><dd>Revestimento em xadrez feito com azulejos lisos de cores diferentes.</dd></div>
+      <div><dt>Figura avulsa</dt><dd>Azulejo com um motivo isolado ao centro, como uma flor, um barco ou um animal.</dd></div>
+      <div><dt>Majólica</dt><dd>Pintura sobre o vidrado de estanho ainda cru, cozida numa só vez com ele.</dd></div>
+      <div><dt>Padrão</dt><dd>Desenho que se repete. Cada azulejo tem uma parte, e o motivo completo só aparece com vários juntos.</dd></div>
+      <div><dt>Registo</dt><dd>Pequeno painel devocional, muitas vezes na fachada de uma casa, com um santo protetor.</dd></div>
+      <div><dt>Silhar</dt><dd>Revestimento da parte inferior de uma parede, até à altura de uma pessoa.</dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+<footer class="rodape">
+  <div class="rodape__barra" data-tile="pombalino:11:40" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rodape__grelha">
+      <div class="rodape__marca">
+        <a class="rodape__logo" href="index.html"><img src="assets/logo-mnaz.svg" alt="" width="96" height="96"><span>Museu Nacional<br>do Azulejo</span></a>
+        <p>Cinco séculos de azulejo português, guardados no antigo Convento da Madre de Deus, em Xabregas.</p>
+      </div>
+      <div>
+        <h4>Morada</h4>
+        <ul>
+          <li>Rua da Madre de Deus, n.º 4</li>
+          <li>1900-312 Lisboa</li>
+          <li class="mono">38.7249° N, 9.1135° W</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contactos</h4>
+        <ul>
+          <li>(+351) 218 100 340</li>
+          <li>geral@mnazulejo.pt</li>
+          <li><a href="visitar.html#contactos">Todos os contactos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Seguir</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/museunazulejo/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/museunazulejo/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@museunacionaldoazulejo4737" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://apps.apple.com/pt/app/museu-do-azulejo/id1151355810" target="_blank" rel="noopener">App (iOS)</a> · <a href="https://play.google.com/store/apps/details?id=com.realizasom.mnazcv&amp;hl=pt_PT" target="_blank" rel="noopener">Android</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h4>Mecenas</h4>
+      <p class="mecenas"><span>Fundação Millennium bcp</span><span>Lusitania · Grupo Montepio</span><span>Kentex Tintas</span><span>Farmácia Estácio Xabregas</span></p>
+    </div>
+    <div class="rodape__fim">
+      <p class="proto-aviso">Protótipo em desenvolvimento. Não é o site oficial do museu.</p>
+      <p>© 2026 <a href="https://www.museusemonumentos.pt" target="_blank" rel="noopener">Museus e Monumentos de Portugal</a></p>
+      <p><a href="https://www.museusemonumentos.pt/pt/pagina/politica-de-privacidade" target="_blank" rel="noopener">Política de privacidade</a> · <a href="https://www.museusemonumentos.pt/pt/pagina/cedencia-de-espacos" target="_blank" rel="noopener">Cedência de espaços</a> · <a href="visitar.html#acessibilidade">Acessibilidade</a> · <a href="creditos.html">Créditos das fotografias</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

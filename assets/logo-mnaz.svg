@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Museu Nacional do Azulejo">
+  <defs><clipPath id="mnaz-in"><circle cx="100" cy="100" r="81"/></clipPath></defs>
+  <circle cx="100" cy="100" r="100" fill="#ebc517"/>
+  <circle cx="100" cy="100" r="81" fill="#137cc0"/>
+  <rect x="71" y="64" width="58" height="60" fill="#ebc517"/>
+  <g clip-path="url(#mnaz-in)" fill="none" stroke="#ebc517" stroke-width="7" stroke-linejoin="miter">
+    <path d="M14 140.5H44L90 189M90 142.5H110M56 140.5H44M186 140.5H156L110 189M90 142.5L38 190M110 142.5L162 190M52 163.5H66M134 163.5H148"/>
+  </g>
+</svg>
