@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Museu Nacional do Azulejo</title>
+<meta name="description" content="Museu Nacional do Azulejo, Lisboa. Cinco séculos de azulejo num convento de 1509. Protótipo da versão 2 do site.">
+<link rel="icon" href="assets/logo-mnaz.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/v2.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+
+<!-- ============ FILME DE ABERTURA ============ -->
+<div class="intro gone" id="intro" role="dialog" aria-label="Filme de abertura" aria-hidden="true">
+  <canvas id="introCv" aria-hidden="true"></canvas>
+  <div class="ihud"><span><i></i>MNAz · Filme de abertura</span><span class="num" id="introTc">00:00:00</span></div>
+  <button class="pill iskip" id="introSkip" type="button">Saltar <span aria-hidden="true">→</span></button>
+  <div class="iprog"><i id="introBar"></i></div>
+</div>
+
+<!-- ============ NAVEGAÇÃO ============ -->
+<div class="aviso" role="note"><span class="ponto" aria-hidden="true"></span>O museu está fechado para obras. Até lá, visite o <a href="#agenda">Open Azulejo no Palácio da Calheta</a>.</div>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Museu Nacional do Azulejo, início"><img src="assets/logo-mnaz.svg" alt="" width="34" height="34"><span>Museu Nacional<br>do Azulejo</span></a>
+    <nav aria-label="Principal">
+      <a href="#convento">Convento 3D</a>
+      <a href="#colecao">Coleção</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#mapa">Azulejo Aberto</a>
+      <a href="#historias">Histórias</a>
+    </nav>
+    <a class="pill solid" href="#visitar">Visitar</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuMob"><span class="sr">Menu</span><i></i><i></i></button>
+  </div>
+  <div class="menu-mob" id="menuMob" hidden>
+    <a href="#convento">Convento 3D</a><a href="#colecao">Coleção</a><a href="#agenda">Agenda</a><a href="#mapa">Azulejo Aberto</a><a href="#historias">Histórias</a><a href="#visitar">Visitar</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ============ ABERTURA ============ -->
+<section class="hero" id="topo" aria-label="Abertura">
+  <div class="parede" id="parede" aria-hidden="true"></div>
+  <div class="parede-luz" id="paredeLuz" aria-hidden="true"></div>
+  <div class="hint lbl" aria-hidden="true"><i></i>Passe o cursor pela parede</div>
+  <button class="rbtn" id="replay" type="button"><span aria-hidden="true">▶</span> Ver o filme</button>
+  <div class="hero-copy">
+    <div class="wrap">
+      <h1><span>Cinco séculos</span><span class="o">numa só</span><span>casa</span></h1>
+      <div class="hero-side">
+        <p>Um convento de 1509 em Xabregas, Lisboa, guarda a maior coleção de azulejo português do mundo. Do século XV aos nossos dias.</p>
+        <div class="row"><a class="pill solid" href="#convento">Entrar no convento</a><a class="pill" href="#agenda">O que ver agora</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker" aria-label="Agora">
+    <span class="badge">Agora</span>
+    <div class="track" id="ticker">
+      <span><b>Open Azulejo</b><em>Palácio da Calheta · ter.–dom. 10h–17h</em></span>
+      <span><b>O azulejo vai ao Algarve</b><em>Tavira · 70 peças</em></span>
+      <span><b>Oficina: explorar, desenhar e pintar</b><em>19 nov. · 10h30</em></span>
+      <span><b>Oficina em família</b><em>22 nov. · 10h30</em></span>
+      <span><b>Do Palácio ao Jardim Botânico</b><em>29 nov. · percurso + oficina</em></span>
+      <span><b>Loja do Palácio Foz</b><em>Restauradores</em></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto" aria-label="Manifesto">
+  <div class="wrap">
+    <p class="lbl">O museu</p>
+    <p class="mtxt" id="mtxt">Um convento fundado em 1509. Uma igreja coberta de ouro. Vinte e três metros de Lisboa antes do terramoto. Cinco séculos de azulejo, sala a sala, piso a piso. E, pela primeira vez, uma maqueta para nunca mais se perder lá dentro.</p>
+    <div class="stats">
+      <div class="rv"><b class="num" data-conta="1509">1509</b><span>Fundação do Convento da Madre de Deus</span></div>
+      <div class="rv"><b class="num" data-conta="1965">1965</b><span>Abre como museu autónomo</span></div>
+      <div class="rv"><b class="num"><span data-conta="23">23</span> m</b><span>Grande Vista de Lisboa, c. 1700</span></div>
+      <div class="rv"><b class="num"><span data-conta="5">5</span></b><span>Séculos de azulejo em exposição</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONVENTO 3D ============ -->
+<section class="sec convento" id="convento" aria-labelledby="convH">
+  <div class="wrap sec-head">
+    <div>
+      <p class="lbl rv">Planta interativa · 3D</p>
+      <h2 class="rv" id="convH">Entrar no<br><span class="o">convento</span></h2>
+    </div>
+    <p class="rv">Arraste para rodar a maqueta, use a roda ou dois dedos para aproximar. Escolha quanto tempo tem, ou um tema, e o caminho desenha-se pelos três pisos.</p>
+  </div>
+  <div class="c3d" id="c3d">
+    <div class="c3d-stage" id="c3dStage">
+      <canvas id="c3dCv" aria-label="Maqueta 3D do convento com as paragens do percurso"></canvas>
+      <div class="c3d-labels" id="c3dLabels"></div>
+      <div class="c3d-fallback" id="c3dFallback" hidden>
+        <p>O seu navegador não mostra a maqueta 3D.</p>
+        <p>Veja a <a href="https://miguelbotelhobarros-star.github.io/museu-azulejo/percurso.html">planta da versão 1</a>.</p>
+      </div>
+      <div class="c3d-tools" role="toolbar" aria-label="Câmara">
+        <button type="button" class="tbtn" id="c3dRodar" aria-pressed="true" title="Rodar sozinha">↻ <span>Rodar</span></button>
+        <button type="button" class="tbtn" id="c3dExplodir" aria-pressed="true" title="Separar os pisos">⇕ <span>Pisos</span></button>
+        <button type="button" class="tbtn" id="c3dCima" title="Vista de cima">⊡ <span>De cima</span></button>
+        <button type="button" class="tbtn" id="c3dIso" title="Vista isométrica">◇ <span>Isométrica</span></button>
+      </div>
+      <div class="c3d-pisos" role="group" aria-label="Pisos">
+        <button type="button" data-piso="-1" aria-pressed="true">Todos</button>
+        <button type="button" data-piso="2" aria-pressed="false">Piso 2</button>
+        <button type="button" data-piso="1" aria-pressed="false">Piso 1</button>
+        <button type="button" data-piso="0" aria-pressed="false">Piso 0</button>
+      </div>
+      <article class="c3d-card" id="c3dCard" hidden aria-live="polite">
+        <button type="button" class="c3d-x" id="c3dCardX" aria-label="Fechar">×</button>
+        <div class="c3d-foto"><img id="c3dCardImg" alt=""></div>
+        <div class="c3d-txt">
+          <p class="lbl" id="c3dCardLbl"></p>
+          <h3 id="c3dCardH"></h3>
+          <p id="c3dCardP"></p>
+          <p class="pista" id="c3dCardPista" hidden></p>
+          <div class="row" id="c3dCardNav" hidden><button type="button" class="pill sm" id="c3dPrev">← Anterior</button><button type="button" class="pill sm solid" id="c3dNext">Seguinte →</button></div>
+        </div>
+      </article>
+    </div>
+    <aside class="c3d-panel" aria-label="Percursos">
+      <p class="lbl">Quanto tempo tem?</p>
+      <div class="chips" id="chipsTempo"></div>
+      <p class="lbl">Ou escolha um tema</p>
+      <div class="chips" id="chipsTema"></div>
+      <h3 id="rotaH"></h3>
+      <p class="rota-sub" id="rotaSub"></p>
+      <ol class="rota-lista" id="rotaLista"></ol>
+      <div class="row"><button type="button" class="pill solid" id="c3dVisita">▶ Fazer a visita</button><span class="lbl num" id="rotaMin"></span></div>
+    </aside>
+  </div>
+  <p class="wrap nota">Maqueta esquemática para o protótipo. Os volumes e a posição das salas serão acertados com a planta real do convento.</p>
+</section>
+
+<!-- ============ COLEÇÃO ============ -->
+<section class="sec room" id="colecao" aria-labelledby="colH">
+  <div class="wrap sec-head">
+    <div>
+      <p class="lbl rv">A coleção</p>
+      <h2 class="rv" id="colH">Do século XV<br>aos nossos dias</h2>
+    </div>
+    <div class="rv">
+      <p>Peças em exposição e em viagem. Toque numa peça para a ver de perto.</p>
+      <div class="chips claro" id="filtros"></div>
+    </div>
+  </div>
+  <div class="wrap"><div class="masonry" id="masonry"></div></div>
+</section>
+
+<!-- ============ AGENDA ============ -->
+<section class="sec" id="agenda" aria-labelledby="agH">
+  <div class="wrap sec-head">
+    <div>
+      <p class="lbl rv">Agenda</p>
+      <h2 class="rv" id="agH">Enquanto o<br>museu se refaz</h2>
+    </div>
+    <p class="rv">Durante as obras, o museu sai de casa: uma exposição no Palácio da Calheta, setenta peças em Tavira, oficinas de pintura e percursos pela cidade.</p>
+  </div>
+  <div class="rail" id="rail" tabindex="0" aria-label="Atividades, deslize para ver mais">
+    <article class="ev grande">
+      <div class="ev-img" style="background-image:url(fotos/ig-open-azulejo-sala.jpg)"><span class="tag">Exposição</span><span class="tag ouro">Em curso</span></div>
+      <h3>Open Azulejo</h3>
+      <p>O Palácio da Calheta abre portas que costumam estar fechadas. Azulejos no lugar para onde foram feitos, ao lado de peças da coleção.</p>
+      <p class="lbl">Palácio da Calheta · ter.–dom. · 10h–17h · desde 5 €</p>
+      <a class="pill sm solid" href="https://mmp.bymeoblueticket.pt/pt/event/16490/open-azulejo-jardim-botanico-tropical" target="_blank" rel="noopener">Comprar bilhete</a>
+    </article>
+    <article class="ev grande">
+      <div class="ev-img" style="background-image:url(fotos/bordalo-pinheiro-960.jpg)"><span class="tag">Exposição</span><span class="tag">Tavira</span></div>
+      <h3>O azulejo vai ao Algarve</h3>
+      <p>Cerca de 70 peças da coleção expostas em Tavira. Obras que normalmente estão na Madre de Deus, longe de Lisboa.</p>
+      <p class="lbl">Tavira · datas a confirmar</p>
+    </article>
+    <article class="ev">
+      <div class="ev-img" style="background-image:url(fotos/ig-oficina-pincel.jpg)"><span class="data num">19<br>nov.</span></div>
+      <h3>Explorar, desenhar e pintar</h3>
+      <p>Técnicas de pintura sobre vidrado. Leve para casa um azulejo pintado por si.</p>
+      <p class="lbl">Adultos e jovens · 10h30</p>
+    </article>
+    <article class="ev">
+      <div class="ev-img" style="background-image:url(fotos/ig-familias-chao.jpg)"><span class="data num">22<br>nov.</span></div>
+      <h3>Pintar em família</h3>
+      <p>Descobrir padrões nas paredes do palácio e desenhar um padrão próprio, em equipa.</p>
+      <p class="lbl">Famílias · 10h30</p>
+    </article>
+    <article class="ev">
+      <div class="ev-img" style="background-image:url(fotos/ig-calheta-jardim.jpg)"><span class="data num">29<br>nov.</span></div>
+      <h3>Do Palácio ao Jardim Botânico</h3>
+      <p>Um percurso de descoberta entre o palácio e o jardim, seguido de oficina de pintura.</p>
+      <p class="lbl">Percurso + oficina · 10h30</p>
+    </article>
+    <article class="ev">
+      <div class="ev-img" style="background-image:url(fotos/ig-oficina-mesa.jpg)"><span class="data num">10<br>dez.</span></div>
+      <h3>Explorar, desenhar e pintar</h3>
+      <p>Segunda sessão da oficina para adultos e jovens.</p>
+      <p class="lbl">Adultos e jovens · 10h30</p>
+    </article>
+    <article class="ev">
+      <div class="ev-img" style="background-image:url(fotos/ig-criancas-azulejos.jpg)"><span class="data num">13<br>dez.</span></div>
+      <h3>Pintar em família</h3>
+      <p>Oficina de pintura de azulejo para pais e filhos.</p>
+      <p class="lbl">Famílias · 10h30</p>
+    </article>
+    <article class="ev">
+      <div class="ev-img" style="background-image:url(fotos/ig-oficina-criancas.jpg)"><span class="data num">27<br>dez.</span></div>
+      <h3>A última oficina do ano</h3>
+      <p>Entre o Natal e o Ano Novo, um azulejo para começar o ano.</p>
+      <p class="lbl">Famílias · 10h30</p>
+    </article>
+  </div>
+  <div class="wrap rail-nav"><button type="button" class="rnav" data-dir="-1" aria-label="Anterior">←</button><button type="button" class="rnav" data-dir="1" aria-label="Seguinte">→</button><span class="lbl">Inscrições: geral@mnazulejo.pt · 218 100 340</span></div>
+</section>
+
+<!-- ============ MAPA ============ -->
+<section class="sec mapsec" id="mapa" aria-labelledby="mapH">
+  <div class="wrap sec-head">
+    <div>
+      <p class="lbl rv">Azulejo Aberto</p>
+      <h2 class="rv" id="mapH">O museu<br><span class="o">continua</span> lá fora</h2>
+    </div>
+    <p class="rv">Palácios, mosteiros, metro e estações de comboio. Cada lugar liga-se às peças do museu. Clique num ponto, ou aproxime-se de Lisboa.</p>
+  </div>
+  <div class="mapa" id="mapaBox">
+    <svg id="mapaSvg" role="img" aria-label="Mapa de Portugal com lugares de azulejo"></svg>
+    <div class="mapa-card" id="mapaCard" aria-live="polite">
+      <div class="mapa-foto" id="mapaFoto"></div>
+      <p class="lbl" id="mapaLbl"></p>
+      <h3 id="mapaH"></h3>
+      <p id="mapaP"></p>
+      <div class="row"><button type="button" class="pill sm" id="mapaPrev">←</button><button type="button" class="pill sm" id="mapaNext">Seguinte →</button></div>
+    </div>
+    <div class="mapa-tools">
+      <button type="button" class="tbtn" id="mapaLx">Lisboa</button>
+      <button type="button" class="tbtn" id="mapaPt">Portugal</button>
+    </div>
+    <ul class="legenda lbl" aria-label="Legenda">
+      <li><i class="lg-museu"></i>Museu</li><li><i class="lg-expo"></i>Exposição</li><li><i class="lg-lugar"></i>Lugar a visitar</li><li><i class="lg-est"></i>Estação de comboio</li>
+    </ul>
+  </div>
+  <div class="wrap ip">
+    <div>
+      <p class="lbl">Proposta · estações-museu</p>
+      <h3>De comboio pelo azulejo</h3>
+      <p>As estações guardam alguns dos painéis mais vistos do país. Uma parceria com a Infraestruturas de Portugal faria de cada uma delas uma extensão do museu: um código em cada painel, roteiros por linha, e um mapa da rede ferroviária na Madre de Deus.</p>
+      <p class="interno">Proposta em estudo. Não publicar antes de haver acordo com a IP.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTÓRIAS ============ -->
+<section class="sec" id="historias" aria-labelledby="hiH">
+  <div class="wrap sec-head">
+    <div>
+      <p class="lbl rv">Histórias</p>
+      <h2 class="rv" id="hiH">Ler as<br>paredes</h2>
+    </div>
+    <p class="rv">Para quem quer olhar com mais atenção.</p>
+  </div>
+  <div class="wrap hist">
+    <article class="hrow">
+      <div class="hfoto" data-par="0.12"><img src="fotos/tecnicas-960.jpg" alt="Azulejos em várias fases de produção" loading="lazy"></div>
+      <div class="htxt rv">
+        <p class="lbl">Técnica · 6 min</p>
+        <h3>Como se faz um azulejo</h3>
+        <p>Barro, chacota, vidrado, pintura, forno. A pintura faz-se sobre o vidrado ainda cru, que absorve a tinta como papel mata-borrão. Não há borracha. Cobalto para o azul, antimónio para o amarelo. A cor não está à superfície: está dentro do vidro.</p>
+        <ol class="passos num"><li>Barro</li><li>Chacota</li><li>Vidrado</li><li>Pintura</li><li>Forno</li></ol>
+      </div>
+    </article>
+    <article class="hrow inv">
+      <div class="hfoto" data-par="0.12"><img src="fotos/visitantes-paineis-960.jpg" alt="Visitantes diante de painéis de azulejo" loading="lazy"></div>
+      <div class="htxt rv">
+        <p class="lbl">Guia · 5 min</p>
+        <h3>Como ler um painel</h3>
+        <p>Comece pelos cantos: é aí que o pintor põe as figuras que levam o olhar até ao centro. Depois procure as juntas, e por fim o azulejo trocado ou rodado. Há um em quase todos os painéis.</p>
+      </div>
+    </article>
+    <article class="hrow">
+      <div class="hfoto" data-par="0.12"><img src="fotos/grande-vista-960.jpg" alt="Pormenor da Grande Vista de Lisboa" loading="lazy"></div>
+      <div class="htxt rv">
+        <p class="lbl">Obra · 7 min</p>
+        <h3>Lisboa antes do terramoto</h3>
+        <p>Por volta de 1700, um painel de 23 metros pintou a frente ribeirinha vista do rio: o Paço da Ribeira, os cais, os conventos nas colinas. Meio século depois, o terramoto de 1755 apagou quase tudo. O azulejo ficou.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ VISITAR ============ -->
+<section class="sec visitar" id="visitar" aria-labelledby="viH">
+  <div class="wrap sec-head">
+    <div>
+      <p class="lbl rv">Visita e bilhetes</p>
+      <h2 class="rv" id="viH">Planear<br>a visita</h2>
+    </div>
+    <p class="rv">O edifício da Madre de Deus está fechado para obras. Até à reabertura, o museu recebe o público no Palácio da Calheta, em Belém.</p>
+  </div>
+  <div class="wrap vgrid">
+    <div class="vbox rv">
+      <p class="lbl">Agora · Palácio da Calheta</p>
+      <h3>Open Azulejo</h3>
+      <dl><dt>Dias</dt><dd>ter.–dom.</dd><dt>Horário</dt><dd>10h00–17h00</dd><dt>Última entrada</dt><dd>16h30</dd></dl>
+      <p>Rua General João de Almeida · Belém. Elétrico 15E ou comboio de Cascais, estação de Belém.</p>
+    </div>
+    <div class="vbox rv">
+      <p class="lbl">Bilhetes</p>
+      <h3>Preços</h3>
+      <dl><dt>Adulto</dt><dd class="num">5,00 €</dd><dt>Maiores de 65</dt><dd class="num">4,00 €</dd><dt>Com o Jardim Botânico</dt><dd class="num">8,00 €</dd><dt>Crianças 2–10 anos</dt><dd>Grátis</dd></dl>
+      <a class="pill solid" href="https://mmp.bymeoblueticket.pt/pt/event/16490/open-azulejo-jardim-botanico-tropical" target="_blank" rel="noopener">Comprar online</a>
+    </div>
+    <div class="vbox rv">
+      <p class="lbl">Depois da reabertura · Madre de Deus</p>
+      <h3>Xabregas</h3>
+      <dl><dt>Morada</dt><dd>Rua da Madre de Deus, 4</dd><dt>Autocarro</dt><dd>718, 742, 794</dd><dt>Metro e comboio</dt><dd>Santa Apolónia</dd></dl>
+      <p>Horário definitivo anunciado com a data de reabertura.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="wordmark" aria-hidden="true">Azulejo</div>
+    <div class="fgrid">
+      <div><img src="assets/logo-mnaz.svg" alt="Museu Nacional do Azulejo" width="64" height="64"><p>Rua da Madre de Deus, 4<br>1900-312 Lisboa<br>geral@mnazulejo.pt · 218 100 340</p></div>
+      <div><p class="lbl">Seguir</p><a href="https://www.instagram.com/museunazulejo/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/museunazulejo/" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/@museunacionaldoazulejo4737" target="_blank" rel="noopener">YouTube</a></div>
+      <div><p class="lbl">App do museu</p><a href="https://apps.apple.com/pt/app/museu-do-azulejo/id1151355810" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=com.realizasom.mnazcv&amp;hl=pt_PT" target="_blank" rel="noopener">Android</a></div>
+      <div><p class="lbl">Este site</p><a href="creditos.html">Créditos das fotografias</a><a href="https://miguelbotelhobarros-star.github.io/museu-azulejo/">Versão 1</a><a href="https://www.museusemonumentos.pt" target="_blank" rel="noopener">Museus e Monumentos de Portugal</a></div>
+    </div>
+    <p class="proto">Protótipo da versão 2, não oficial. Fotografias: Wikimedia Commons (licenças CC) e Instagram @museunazulejo, ver créditos.</p>
+  </div>
+</footer>
+
+<!-- visualizador de peças -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="vTitle" hidden>
+  <button type="button" class="vclose" id="vClose" aria-label="Fechar">×</button>
+  <div class="vstage" id="vStage"><img id="vImg" alt=""></div>
+  <div class="vinfo">
+    <p class="lbl" id="vLbl"></p>
+    <h2 id="vTitle"></h2>
+    <p id="vTxt"></p>
+    <dl id="vDl"></dl>
+    <p class="lbl">Toque na imagem para aproximar</p>
+  </div>
+</div>
+
+<script src="assets/pecas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/intro.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/convento3d.js"></script>
+<script src="assets/mapa.js"></script>
+</body>
+</html>
